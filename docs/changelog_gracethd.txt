@@ -1,0 +1,13 @@
+GraceTHD - Changelog (journal des révisions)
+
+GraceTHD est seulement un package des projets qui le constituent. Chacun de ces projets a son propre changelog, sa propre documentation, etc. Ce changelog ne fera qu'indiquer les versions intégrées de ces sous-projets au fil des révisions. 
+
+Chacun peut aisément constituer son propre package GraceTHD avec les projets qu'il souhaite (dans les versions qu'il souhaite). Ce package "officiel" est toujours basé sur la dernière version de GraceTHD-MCD, donc il porte le numéro de version du dernier GraceTHD-MCD officiel complété d'un numéro de révision constitué de la date et du mois. Exemple : GraceTHD_v2.0.1_r1805 pour un package mis à jour en mai 2018. 
+
+v2.0.1_r1805
+- GraceTHD-MCD v2.0.1
+- GraceTHD-MOD v2.0.2
+- GraceTHD-Demo v2.0.1
+- GraceTHD-Layers v0.03
+- GraceTHD-Check v0.02.2
+- GraceTHD-Data v0.02
