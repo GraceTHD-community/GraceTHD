@@ -1,0 +1,10 @@
+title: GraceTHD-Data
+description: Extension du modèle de données GraceTHD-MCD
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-architect
+github:
+  zip_url: 'https://github.com/GraceTHD-community/GraceTHD-Data/zipball/master'
+tar_url: 'https://github.com/GraceTHD-community/GraceTHD-Data/tarball/master'
+gems:
+- jekyll-mentions

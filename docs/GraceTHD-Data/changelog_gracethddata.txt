@@ -1,0 +1,27 @@
+GraceTHD-Data
+
+### Changelog
+
+v0.02.0-beta
+Général : 
+- chg: mise à jour des fichiers csv dans db_shpcsv
+
+SQL :
+- chg: gracethddata_30_tables.sql : les tables sont renommées t_dt_* plutôt que t_*_data de sortes à être cohérent avec le nommage des autres extensions de GraceTHD-MCD.
+- chg: gracethddata_60_views.sql : prise en compte du changement de nommage des tables et des vues. 
+- add: racethddata_60_views.sql : ajout pour les références de vues équivalentes à celles disponibles pour les organismes. 
+- fix: gracethddata_32_insert_rf.sql : ajout du contenu manquant dans la publication précédente. 
+- chg: gracethddata_32_insert_or.sql : mise à jour pour assurer la cohérence avec les références. 
+
+BATCHS :
+- chg: gracethddata_pg_export_shpcsv-out.bat : prise en compte du nouveau nommage des tables. 
+- chg: gracethddata_pg_import_shpcsv-in_psql.bat : prise en compte du nouveau nommage des tables et ajout non opérationnel par défaut de la prise en compte de t_dt_organisme et t_dt_reference. 
+- chg: gracethddata_spl_dbinteg_import_shpcsv-in_ogr.bat : prise en compte du nouveau nommage des tables. 
+- chg: gracethddata_spl_dbinteg_export_to_shpcsv-out.bat : prise en compte du nouveau nommage des tables. 
+
+db_shpcsv :
+- chg: mise à jour des fichiers CSV avec le nouveau nommage. 
+
+
+v0.01.0-alpha
+-add: Initialisation de ce projet. 
