@@ -3,7 +3,7 @@
 REM gracethdcheck_pg_create_tables.bat
 REM Owner : GraceTHD-Community - http://gracethd-community.github.io/
 REM Author : stephane dot byache at aleno dot eu
-REM Rev. date : 20/11/2017
+REM Rev. date : 25/06/2018
 
 
     REM This file is part of GraceTHD.
@@ -61,11 +61,11 @@ GOTO:EOF
 
 REM pgsql2shp -f "D:\postgres_files\shpcsv-out\t_adresse" -h localhost -p 5433 -u postgres -P MYPASSWORD gracethd-v2-beta1b gracethd.t_zcoax
 
-SET PGTBL=t_organisme_rel
+SET PGTBL=t_dt_organisme_rel
 SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
 "%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -c "\COPY %PGSCHEMADATA%.%PGTBL% TO '%PGCSV%' %PGCSVCONF%;" -d %PGDB% %PGUSER%
 
-SET PGTBL=t_reference_rel
+SET PGTBL=t_dt_reference_rel
 SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
 "%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -c "\COPY %PGSCHEMADATA%.%PGTBL% TO '%PGCSV%' %PGCSVCONF%;" -d %PGDB% %PGUSER%
 
@@ -78,13 +78,30 @@ GOTO:EOF
 
 REM pgsql2shp -f "D:\postgres_files\shpcsv-out\t_adresse" -h localhost -p 5433 -u postgres -P MYPASSWORD gracethd-v2-beta1b gracethd.t_zcoax
 
-SET PGTBL=t_organisme_data
+SET PGTBL=t_dt_organisme
 SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
 "%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -c "\COPY %PGSCHEMADATA%.%PGTBL% TO '%PGCSV%' %PGCSVCONF%;" -d %PGDB% %PGUSER%
 
-SET PGTBL=t_reference_data
+SET PGTBL=t_dt_reference
 SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
 "%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -c "\COPY %PGSCHEMADATA%.%PGTBL% TO '%PGCSV%' %PGCSVCONF%;" -d %PGDB% %PGUSER%
+
+SET PGTBL=t_dt_tgkey
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -c "\COPY %PGSCHEMADATA%.%PGTBL% TO '%PGCSV%' %PGCSVCONF%;" -d %PGDB% %PGUSER%
+
+SET PGTBL=t_dt_tgkey_user
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -c "\COPY %PGSCHEMADATA%.%PGTBL% TO '%PGCSV%' %PGCSVCONF%;" -d %PGDB% %PGUSER%
+
+SET PGTBL=t_dt_tag
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -c "\COPY %PGSCHEMADATA%.%PGTBL% TO '%PGCSV%' %PGCSVCONF%;" -d %PGDB% %PGUSER%
+
+SET PGTBL=t_dt_tag_user
+SET PGCSV=%PGSHPOUTPATH%\%PGTBL%.csv
+"%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -c "\COPY %PGSCHEMADATA%.%PGTBL% TO '%PGCSV%' %PGCSVCONF%;" -d %PGDB% %PGUSER%
+
 
 %GLPAUSE%
 PAUSE

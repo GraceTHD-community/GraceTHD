@@ -1,7 +1,7 @@
-/* gracethddata_30_tables.sql */
+﻿/* gracethddata_30_tables.sql */
 /* Owner : GraceTHD-Community - http://gracethd-community.github.io/ */
 /* Author : stephane dot byache at aleno dot eu */
-/* Rev. date : 18/05/2018 */
+/* Rev. date : 25/06/2018 */
 
 /* ********************************************************************
     This file is part of GraceTHD.
@@ -22,10 +22,16 @@
 
 /*Spatialite*/
 
+--SET search_path TO gracethddata, gracethd, public;
+
 DROP TABLE IF EXISTS t_dt_reference_rel;
 DROP TABLE IF EXISTS t_dt_organisme_rel;
 DROP TABLE IF EXISTS t_dt_organisme;
 DROP TABLE IF EXISTS t_dt_reference;
+DROP TABLE IF EXISTS t_dt_tgkey;
+DROP TABLE IF EXISTS t_dt_tgkey_user;
+DROP TABLE IF EXISTS t_dt_tag;
+DROP TABLE IF EXISTS t_dt_tag_user;
 
 
 CREATE TABLE t_dt_organisme(	or_code VARCHAR (20) NOT NULL  ,
@@ -76,4 +82,54 @@ CREATE TABLE t_dt_reference_rel(
 	rr_codedat VARCHAR(254) REFERENCES t_dt_reference(rf_code),
 	rr_rf_code VARCHAR(254) REFERENCES t_reference(rf_code),
 CONSTRAINT "t_dt_reference_rel_pk" PRIMARY KEY (rr_codedat, rr_rf_code)
+);
+
+CREATE TABLE t_dt_tgkey (
+	tk_key VARCHAR(20) NOT NULL, --(clé)
+	tk_def VARCHAR(254), --définition de clé de tag. 
+	tk_comment VARCHAR(254),
+	tk_creadat TIMESTAMP, 
+	tk_majdate TIMESTAMP,
+	tk_majsrc VARCHAR(254),
+	tk_abddate DATE,
+	tk_abdsrc VARCHAR(254),
+	CONSTRAINT "t_dt_tgkey_pk" PRIMARY KEY (tk_key)
+);
+
+CREATE TABLE t_dt_tag (
+	tg_key VARCHAR(20) NOT NULL REFERENCES t_dt_key(tk_key), --(clé)
+	tg_val VARCHAR(20) NOT NULL, -- valeur possible pour une clé. 
+	tg_def VARCHAR(254), --définition du tag, c'est à dire du couple clé/valeur. 
+	tg_comment VARCHAR(254),
+	tg_creadat TIMESTAMP, 
+	tg_majdate TIMESTAMP,
+	tg_majsrc VARCHAR(254),
+	tg_abddate DATE,
+	tg_abdsrc VARCHAR(254),
+	CONSTRAINT "t_dt_tag_pk" PRIMARY KEY (tg_key, tg_val)
+);
+
+CREATE TABLE t_dt_tgkey_user (
+	tk_key VARCHAR(20) NOT NULL CHECK(tk_key LIKE 'usr%'), --(clé)
+	tk_def VARCHAR(254), --définition de clé de tag. 
+	tk_comment VARCHAR(254),
+	tk_creadat TIMESTAMP, 
+	tk_majdate TIMESTAMP,
+	tk_majsrc VARCHAR(254),
+	tk_abddate DATE,
+	tk_abdsrc VARCHAR(254),
+	CONSTRAINT "t_dt_tgkey_user_pk" PRIMARY KEY (tk_key)
+);
+
+CREATE TABLE t_dt_tag_user (
+	tg_key VARCHAR(20) NOT NULL REFERENCES t_dt_key_user(tk_key), --(clé)
+	tg_val VARCHAR(20) NOT NULL, -- valeur possible pour une clé. 
+	tg_def VARCHAR(254), --définition du tag, c'est à dire du couple clé/valeur. 
+	tg_comment VARCHAR(254),
+	tg_creadat TIMESTAMP, 
+	tg_majdate TIMESTAMP,
+	tg_majsrc VARCHAR(254),
+	tg_abddate DATE,
+	tg_abdsrc VARCHAR(254),
+	CONSTRAINT "t_dt_tag_user_pk" PRIMARY KEY (tg_key, tg_val)
 );

@@ -3,7 +3,7 @@
 REM gracethddata_spl_create_on_dbinteg.bat
 REM Owner : GraceTHD-Community - http://gracethd-community.github.io/
 REM Author : stephane dot byache at aleno dot eu
-REM Rev. date : 20/11/2017
+REM Rev. date : 25/06/2018
 
     REM This file is part of GraceTHD.
 
@@ -55,6 +55,10 @@ SET FSQL=%GLDBINTEGSCHEMA%\gracethddata_31_insert_or.sql
 
 ECHO GRACELITE - CREATION DE LA STRUCTURE GRACETHD-DATA : VALEURS RF
 SET FSQL=%GLDBINTEGSCHEMA%\gracethddata_32_insert_rf.sql
+%GLSPLEX% %GLDBINTEG% < %FSQL%
+
+ECHO GRACELITE - CREATION DE LA STRUCTURE GRACETHD-DATA : VALEURS TK TG
+SET FSQL=%GLDBINTEGSCHEMA%\gracethddata_33_insert_tk_tg.sql
 %GLSPLEX% %GLDBINTEG% < %FSQL%
 
 ECHO GRACELITE - CREATION DE LA STRUCTURE GRACETHD-DATA : VUES

@@ -3,7 +3,7 @@
 REM gracethd_spl_dbinteg_export_to_shpcsv-out.bat
 REM Owner : GraceTHD-Community - http://gracethd-community.github.io/
 REM Author : stephane dot byache at aleno dot eu
-REM Rev. date : 12/10/2017
+REM Rev. date : 25/06/2018
 
     REM This file is part of GraceTHD.
 
@@ -27,6 +27,8 @@ ECHO EXPORT DANS SHPCSV-OUT DES TABLES DE gracelite_integ.sqlite
 CALL:CONFIG
 
 CALL:EXPORTCSVDATA
+CALL:EXPORTCSVDATATAG
+
 
 REM CALL:SFK
 REM APPEL UNE SECONDE FOIS CAR BUG, DES " RESTENT EN FIN DE LA LIGNE LA 1ERE FOIS
@@ -44,7 +46,7 @@ GOTO:EOF
 
 :EXPORTCSVDATA
 ECHO Gracelite - GraceTHD-Data - Export des tables en csv. 
-SET CSVTBL=t_organisme_rel
+SET CSVTBL=t_dt_organisme_rel
 SET CSVOUT=%GLSHPOUTPATH%\%CSVTBL%.csv
 ECHO Gracelite - GraceTHD-Data - Suppression %CSVOUT%
 IF EXIST %CSVOUT% DEL %CSVOUT%
@@ -52,7 +54,7 @@ ECHO Gracelite - GraceTHD-Data - Export %CSVOUT%
 REM -silent 
 %GLSPLEX% -header -csv -separator ';' %GLDBINTEG% "SELECT * FROM %CSVTBL%;" > %CSVOUT%
 
-SET CSVTBL=t_reference_rel
+SET CSVTBL=t_dt_reference_rel
 SET CSVOUT=%GLSHPOUTPATH%\%CSVTBL%.csv
 ECHO Gracelite - GraceTHD-Data - Suppression %CSVOUT%
 IF EXIST %CSVOUT% DEL %CSVOUT%
@@ -61,6 +63,27 @@ REM -silent
 %GLSPLEX% -header -csv -separator ';' %GLDBINTEG% "SELECT * FROM %CSVTBL%;" > %CSVOUT%
 
 GOTO:EOF
+
+:EXPORTCSVDATATAG
+ECHO Gracelite - GraceTHD-Data - Export des tables en csv. 
+SET CSVTBL=t_dt_tgkey_user
+SET CSVOUT=%GLSHPOUTPATH%\%CSVTBL%.csv
+ECHO Gracelite - GraceTHD-Data - Suppression %CSVOUT%
+IF EXIST %CSVOUT% DEL %CSVOUT%
+ECHO Gracelite - GraceTHD-Data - Export %CSVOUT%
+REM -silent 
+%GLSPLEX% -header -csv -separator ';' %GLDBINTEG% "SELECT * FROM %CSVTBL%;" > %CSVOUT%
+
+SET CSVTBL=t_dt_tag_user
+SET CSVOUT=%GLSHPOUTPATH%\%CSVTBL%.csv
+ECHO Gracelite - GraceTHD-Data - Suppression %CSVOUT%
+IF EXIST %CSVOUT% DEL %CSVOUT%
+ECHO Gracelite - GraceTHD-Data - Export %CSVOUT%
+REM -silent 
+%GLSPLEX% -header -csv -separator ';' %GLDBINTEG% "SELECT * FROM %CSVTBL%;" > %CSVOUT%
+
+GOTO:EOF
+
 
 %GLPAUSE%
 

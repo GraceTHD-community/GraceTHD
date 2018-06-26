@@ -4,6 +4,9 @@ GraceTHD est seulement un package des projets qui le constituent. Chacun de ces 
 
 Chacun peut aisément constituer son propre package GraceTHD avec les projets qu'il souhaite (dans les versions qu'il souhaite). Ce package "officiel" est toujours basé sur la dernière version de GraceTHD-MCD, donc il porte le numéro de version du dernier GraceTHD-MCD officiel complété d'un numéro de révision constitué de la date et du mois. Exemple : GraceTHD_v2.0.1_r1805 pour un package mis à jour en mai 2018. 
 
+v2.0.1_r180626
+- GraceTHD-Data v0.03.0
+
 v2.0.1_r1805
 - GraceTHD-MCD v2.0.1
 - GraceTHD-MOD v2.0.2

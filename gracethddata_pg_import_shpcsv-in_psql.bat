@@ -3,7 +3,7 @@
 REM gracethd_pg_import_shpcsv-in_psql.bat
 REM Owner : GraceTHD-Community - http://gracethd-community.github.io/
 REM Author : stephane dot byache at aleno dot eu
-REM Rev. date : 20/11/2017
+REM Rev. date : 26/06/2018
 
     REM This file is part of GraceTHD.
 
@@ -30,10 +30,12 @@ REM Decommenter quand ca coince.
 REM CALL:DEBUG
 
 ECHO GraceTHD-Data - Debut import CSV dans la base PostGIS %PGHOSTNAME%:%PGDB%. 
-CALL:IMPORTDATA
-
+REM On n'importe que les données des tables de relations. Les données sont déjà chargées avec les SQL. Mais si besoin on peut appeler :IMPORTDATA en décommentant la ligne suivante. 
+REM CALL:IMPORTDATA
+CALL:IMPORTDATAREL
+REM CALL:IMPORTDATATAG
+CALL:IMPORTDATATAGUSER
 CALL:END
-
 
 
 :CONF
@@ -67,8 +69,7 @@ GOTO:EOF
 
 :IMPORTDATA
 
-
-SET PGTBL=t_organisme_rel
+SET PGTBL=t_dt_organisme
 SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
 ECHO GraceTHD - Debut import %PGTBL%
 IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMADATA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
@@ -76,7 +77,7 @@ ECHO GraceTHD-Data - Fin import %PGTBL%
 
 %GLPAUSE%
 
-SET PGTBL=t_reference_rel
+SET PGTBL=t_dt_reference
 SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
 ECHO GraceTHD - Debut import %PGTBL%
 IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMADATA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
@@ -85,6 +86,49 @@ ECHO GraceTHD-Data - Fin import %PGTBL%
 %GLPAUSE%
 
 GOTO:EOF
+
+:IMPORTDATAREL
+
+SET PGTBL=t_dt_organisme_rel
+SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
+ECHO GraceTHD - Debut import %PGTBL%
+IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMADATA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+ECHO GraceTHD-Data - Fin import %PGTBL%
+
+%GLPAUSE%
+
+SET PGTBL=t_dt_reference_rel
+SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
+ECHO GraceTHD - Debut import %PGTBL%
+IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMADATA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+ECHO GraceTHD-Data - Fin import %PGTBL%
+
+%GLPAUSE%
+
+
+GOTO:EOF
+
+:IMPORTDATATAGUSER
+
+SET PGTBL=t_dt_tgkey_user
+SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
+ECHO GraceTHD - Debut import %PGTBL%
+IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMADATA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+ECHO GraceTHD-Data - Fin import %PGTBL%
+
+%GLPAUSE%
+
+SET PGTBL=t_dt_tag_user
+SET PGCSV=%PGSHPINPATH%\%PGTBL%.csv
+ECHO GraceTHD - Debut import %PGTBL%
+IF EXIST "%PGCSV%" ("%GL_PSQL%" -h %PGHOSTNAME% -p %PGPORT% -d %PGDB% -U %PGUSER% -c "\COPY %PGSCHEMADATA%.%PGTBL% FROM '%PGCSV%' %PGCSVCONF%;") ELSE (ECHO %PGCSV% n'existe pas ! Il est probable que la suite des chargements ne fonctionne pas correctement.) 
+ECHO GraceTHD-Data - Fin import %PGTBL%
+
+%GLPAUSE%
+
+
+GOTO:EOF
+
 
 
 :WAIT

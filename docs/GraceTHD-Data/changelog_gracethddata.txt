@@ -2,6 +2,31 @@ GraceTHD-Data
 
 ### Changelog
 
+v0.03.0-beta
+SQL : 
+- chg: gracethddata_30_tables.sql : ajout t_dt_tgkey en test pour un système d'extension du MCD avec des tags. 
+- chg: gracethddata_30_tables.sql : ajout t_dt_tag en test pour un système d'extension du MCD avec des tags. 
+- chg: gracethddata_30_tables.sql : ajout t_dt_tgkey_user en test pour un système d'extension du MCD avec des tags. 
+- chg: gracethddata_30_tables.sql : ajout t_dt_tag_user en test pour un système d'extension du MCD avec des tags. 
+- add: gracethddata_33_insert_tk_tg.sql : ajout pour insertion de valeurs dans les nouvelles tables d'inventaire de tags. 
+Batchs :
+- chg: gracethddata_pg_create_on_db.bat : prise en compte des tables de tag. 
+- chg: gracethddata_spl_create_on_dbinteg.bat : prise en compte des tables de tag. 
+- chg: gracethddata_pg_export_shpcsv-out.bat : prise en compte des tables de tag. 
+- chg: gracethddata_pg_import_shpcsv-in_psql.bat : prise en compte des tables de tag. 
+- chg: gracethddata_spl_dbinteg_export_to_shpcsv-out.bat : prise en compte des tables de tag. 
+
+Données t_dt_organisme : 
+- chg: or_type : un type général + la définition NAF de l'activité principale est placée entre parenthèses. 'Département' remplacé par 'Conseil general' et 'Région' remplacé par 'Conseil regional'. 
+- chg: or_activ : cet attribut n'est plus réservé que pour le code NAF (quand disponible). 
+- add: t_dt_organisme : ajouts d'entrées Axione/NATHD
+Données t_dt_reference :
+- chg: rf_etat : renseignement 'A' pour toutes les entrées. 
+- add: t_dt_reference : ajouts d'entrées Axione/NATHD
+Données t_dt_tgkey, t_dt_tag, t_dt_tgkey_user : 
+- add: gracethddata_33_insert_tk_tg.sql : insertion de valeurs dans les tables t_dt_tgkey, t_dt_tag, t_dt_tgkey_user
+
+
 v0.02.0-beta
 Général : 
 - chg: mise à jour des fichiers csv dans db_shpcsv
