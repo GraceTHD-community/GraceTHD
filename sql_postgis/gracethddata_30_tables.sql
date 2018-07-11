@@ -97,7 +97,7 @@ CREATE TABLE t_dt_tgkey (
 );
 
 CREATE TABLE t_dt_tag (
-	tg_key VARCHAR(20) NOT NULL REFERENCES t_dt_key(tk_tgkey), --(clé)
+	tg_key VARCHAR(20) NOT NULL REFERENCES t_dt_tgkey(tk_key), --(clé)
 	tg_val VARCHAR(20) NOT NULL, -- valeur possible pour une clé. 
 	tg_def VARCHAR(254), --définition du tag, c'est à dire du couple clé/valeur. 
 	tg_comment VARCHAR(254),
@@ -122,7 +122,7 @@ CREATE TABLE t_dt_tgkey_user (
 );
 
 CREATE TABLE t_dt_tag_user (
-	tg_key VARCHAR(20) NOT NULL REFERENCES t_dt_key_user(tk_tgkey), --(clé)
+	tg_key VARCHAR(20) NOT NULL REFERENCES t_dt_tgkey_user(tk_key), --(clé)
 	tg_val VARCHAR(20) NOT NULL, -- valeur possible pour une clé. 
 	tg_def VARCHAR(254), --définition du tag, c'est à dire du couple clé/valeur. 
 	tg_comment VARCHAR(254),

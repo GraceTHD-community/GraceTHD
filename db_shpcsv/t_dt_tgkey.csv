@@ -1,0 +1,13 @@
+tk_key;tk_def;tk_comment;tk_creadat;tk_majdate;tk_majsrc;tk_abddate;tk_abdsrc
+tech;Technologie;;2018-06-25 23:18:00;;aleno;;
+tech:t;Technologie telecom;;;;;;
+tech:t:f;Technologie telecom fibre optique;;;;;;
+tech:t:c;Technologie telecom cuivre;;;;;;
+tech:t:x;Technologie telecom coaxiale;;;;;;
+tech:t:h;Technologie telecom hertzienne;;;;;;
+tech:e;Technologie electrique;;;;;;
+tech:g;Technologie geothermique;;;;;;
+tech:l;Technologie eclairage;;;;;;
+tech:t:netname;Technologie telecom nom du reseau;Pas de liste de valeurs;;;;;
+tech:z;Technologie gaz;;;;;;
+tech:t:f:gfuname;Technologie telecom fibre optique nom du GFU;Pas de liste de valeurs;;;;;

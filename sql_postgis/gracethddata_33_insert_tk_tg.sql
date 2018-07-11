@@ -1,7 +1,7 @@
 /* gracethddata_32_insert_tk_tg.sql */
 /* Owner : GraceTHD-Community - http://gracethd-community.github.io/ */
 /* Author : stephane dot byache at aleno dot eu */
-/* Rev. date : 25/06/2018 */
+/* Rev. date : 11/07/2018 */
 
 /* ********************************************************************
     This file is part of GraceTHD.
@@ -22,27 +22,31 @@
 
 SET search_path = gracethddata, public, gracethd, pg_catalog;
 
-INSERT INTO t_dt_tgkey VALUES 
-('tech','Techologie',NULL,'2018-06-25 23:18:00',NULL,'aleno',NULL,NULL),
-('tech:tfo','Techologie telecom fibre',NULL,'2018-06-25 23:18:00',NULL,'aleno',NULL,NULL),
-('tech:thz','Techologie telecom hertzienne',NULL,'2018-06-25 23:18:00',NULL,'aleno',NULL,NULL),
-('tech:tcx','Techologie telecom coaxiale',NULL,'2018-06-25 23:18:00',NULL,'aleno',NULL,NULL),
-('tech:tcu','Techologie telecom cuivre',NULL,'2018-06-25 23:18:00',NULL,'aleno',NULL,NULL)
-;
 
-INSERT INTO t_dt_tag VALUES
-('tech:tfo','FTTN','Fiber To The Neighbourhood','Fibre jusqu au quartier','2018-06-25 23:28:00',NULL,'aleno',NULL,NULL),
-('tech:tfo','FTTC','Fiber To The Curb','Fibre jusqu au trottoir','2018-06-25 23:28:00',NULL,'aleno',NULL,NULL),
-('tech:tfo','FTTS','Fiber To The Street','Fibre jusqu a la rue - bâtiment','2018-06-25 23:28:00',NULL,'aleno',NULL,NULL),
---('tech:tfo','FTTN','Fiber To The Node',NULL,'2018-06-25 23:28:00','Fibre jusqu au repartiteur','aleno',NULL,NULL),
-('tech:tfo','FTTB','Fiber To The Building','Fibre jusqu au batiment','2018-06-25 23:28:00',NULL,'aleno',NULL,NULL),
-('tech:tfo','FTTcab','Fiber To The Curb','Fibre jusqu au sous-repartiteur','2018-06-25 23:28:00',NULL,'aleno',NULL,NULL),
-('tech:tfo','FTTH','Fiber To The Home','Fibre jusqu au domicile','2018-06-25 23:28:00',NULL,'aleno',NULL,NULL),
-('tech:tfo','FTTE','Fiber To The Entreprise','Fibre pour les entreprises','2018-06-25 23:28:00',NULL,'aleno',NULL,NULL),
-('tech:tfo','FTTO','Fiber To The Office','Fibre jusqu au bureau - entreperises','2018-06-25 23:28:00',NULL,'aleno',NULL,NULL),
-('tech:tfo','FTTLA','Fiber To The Last Amplifier','Fibre jusqu au dernier amplificateur','2018-06-25 23:28:00',NULL,'aleno',NULL,NULL)
-;
 
-INSERT INTO t_dt_tgkey_user VALUES 
-('usr','Cle utilisateur','Toutes les cles utilisateurs doivent commencer par usr:','2018-06-25 23:18:00',NULL,'aleno',NULL,NULL)
-;
+INSERT INTO t_dt_tgkey VALUES ('tech', 'Technologie', NULL, '2018-06-25 23:18:00', NULL, 'aleno', NULL, NULL);
+INSERT INTO t_dt_tgkey VALUES ('tech:t', 'Technologie telecom', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO t_dt_tgkey VALUES ('tech:t:f', 'Technologie telecom fibre optique', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO t_dt_tgkey VALUES ('tech:t:c', 'Technologie telecom cuivre', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO t_dt_tgkey VALUES ('tech:t:x', 'Technologie telecom coaxiale', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO t_dt_tgkey VALUES ('tech:t:h', 'Technologie telecom hertzienne', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO t_dt_tgkey VALUES ('tech:e', 'Technologie electrique', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO t_dt_tgkey VALUES ('tech:g', 'Technologie geothermique', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO t_dt_tgkey VALUES ('tech:l', 'Technologie eclairage', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO t_dt_tgkey VALUES ('tech:t:netname', 'Technologie telecom nom du reseau', 'Pas de liste de valeurs', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO t_dt_tgkey VALUES ('tech:z', 'Technologie gaz', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO t_dt_tgkey VALUES ('tech:t:f:gfuname', 'Technologie telecom fibre optique nom du GFU', 'Pas de liste de valeurs', NULL, NULL, NULL, NULL, NULL);
+
+
+INSERT INTO t_dt_tag VALUES ('tech:t:f', 'FTTB', 'Fiber To The Building', 'Fibre jusqu au batiment', '2018-06-25 23:28:00', NULL, 'aleno', NULL, NULL);
+INSERT INTO t_dt_tag VALUES ('tech:t:f', 'FTTC', 'Fiber To The Curb', 'Fibre jusqu au trottoir', '2018-06-25 23:28:00', NULL, 'aleno', NULL, NULL);
+INSERT INTO t_dt_tag VALUES ('tech:t:f', 'FTTcab', 'Fiber To The Curb', 'Fibre jusqu au sous-repartiteur', '2018-06-25 23:28:00', NULL, 'aleno', NULL, NULL);
+INSERT INTO t_dt_tag VALUES ('tech:t:f', 'FTTE', 'Fiber To The Entreprise', 'Fibre pour les entreprises', '2018-06-25 23:28:00', NULL, 'aleno', NULL, NULL);
+INSERT INTO t_dt_tag VALUES ('tech:t:f', 'FTTH', 'Fiber To The Home', 'Fibre jusqu au domicile', '2018-06-25 23:28:00', NULL, 'aleno', NULL, NULL);
+INSERT INTO t_dt_tag VALUES ('tech:t:f', 'FTTLA', 'Fiber To The Last Amplifier', 'Fibre jusqu au dernier amplificateur', '2018-06-25 23:28:00', NULL, 'aleno', NULL, NULL);
+INSERT INTO t_dt_tag VALUES ('tech:t:f', 'FTTN', 'Fiber To The Neighbourhood', 'Fibre jusqu au quartier', '2018-06-25 23:28:00', NULL, 'aleno', NULL, NULL);
+INSERT INTO t_dt_tag VALUES ('tech:t:f', 'FTTO', 'Fiber To The Office', 'Fibre jusqu au bureau - entreperises', '2018-06-25 23:28:00', NULL, 'aleno', NULL, NULL);
+INSERT INTO t_dt_tag VALUES ('tech:t:f', 'FTTS', 'Fiber To The Street', 'Fibre jusqu a la rue - bâtiment', '2018-06-25 23:28:00', NULL, 'aleno', NULL, NULL);
+
+
+

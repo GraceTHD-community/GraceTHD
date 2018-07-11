@@ -1,7 +1,7 @@
 /* gracethddata_32_insert_rf.sql */
 /* Owner : GraceTHD-Community - http://gracethd-community.github.io/ */
 /* Author : stephane dot byache at aleno dot eu */
-/* Rev. date : 25/06/2018 */
+/* Rev. date : 11/07/2018 */
 
 /* ********************************************************************
     This file is part of GraceTHD.
@@ -20,7 +20,6 @@
     along with GraceTHD.  If not, see <http://www.gnu.org/licenses/>.
 *********************************************************************** */
 
---SET search_path = gracethddata, public, gracethd, pg_catalog;
 
 INSERT INTO t_dt_reference VALUES ('RF033000000001', 'BP', 'OR033002100000', 'OFDC', 'A', NULL, '2017-11-20 21:31:26', NULL, NULL, NULL, NULL);
 INSERT INTO t_dt_reference VALUES ('RF033000000002', 'BP', 'OR033002100000', 'OFMC', 'A', NULL, '2017-11-20 21:32:43', NULL, NULL, NULL, NULL);
@@ -284,4 +283,3 @@ INSERT INTO t_dt_reference VALUES ('RF033000000262', 'TI', 'OR033002100002', 'CO
 INSERT INTO t_dt_reference VALUES ('RF033000000263', 'TI', 'OR033002100002', 'COSH 144 FO', 'A', NULL, '2018-06-25 00:00:00', NULL, 'axione', NULL, NULL);
 INSERT INTO t_dt_reference VALUES ('RF033000000264', 'TI', 'OR033002100002', 'KINOPTIC', 'A', NULL, '2018-06-25 00:00:00', NULL, 'axione', NULL, NULL);
 INSERT INTO t_dt_reference VALUES ('RF033000000265', 'TI', 'OR033002100026', 'TOM', 'A', NULL, '2018-06-25 00:00:00', NULL, 'axione', NULL, NULL);
-

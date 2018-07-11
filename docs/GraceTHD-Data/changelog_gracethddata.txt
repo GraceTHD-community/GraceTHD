@@ -2,6 +2,13 @@ GraceTHD-Data
 
 ### Changelog
 
+v0.04.0-beta
+- add: t_dt_organisme : mise à jour des opérateurs à partir de la liste L33-1 de l'Arcep (+337 opérateurs) à partir d'une nouvelle base de mise à jour. 
+- fix: t_dt_organisme : dédoublonnage de conseils départementaux présents en tant que CD et opérateurs dans la liste arcep. 
+- chg: t_dt_organisme : Conseil général changé en Conseil départemental. 
+- chg: t_dt_tgkey : modification de nomenclature des clés. 
+- chg: t_dt_tag : modification de nomenclature des clés. 
+
 v0.03.0-beta
 SQL : 
 - chg: gracethddata_30_tables.sql : ajout t_dt_tgkey en test pour un système d'extension du MCD avec des tags. 

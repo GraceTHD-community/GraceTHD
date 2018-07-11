@@ -1,0 +1,10 @@
+tg_key;tg_val;tg_def;tg_comment;tg_creadat;tg_majdate;tg_majsrc;tg_abddate;tg_abdsrc
+tech:t:f;FTTB;Fiber To The Building;Fibre jusqu au batiment;2018-06-25 23:28:00;;aleno;;
+tech:t:f;FTTC;Fiber To The Curb;Fibre jusqu au trottoir;2018-06-25 23:28:00;;aleno;;
+tech:t:f;FTTcab;Fiber To The Curb;Fibre jusqu au sous-repartiteur;2018-06-25 23:28:00;;aleno;;
+tech:t:f;FTTE;Fiber To The Entreprise;Fibre pour les entreprises;2018-06-25 23:28:00;;aleno;;
+tech:t:f;FTTH;Fiber To The Home;Fibre jusqu au domicile;2018-06-25 23:28:00;;aleno;;
+tech:t:f;FTTLA;Fiber To The Last Amplifier;Fibre jusqu au dernier amplificateur;2018-06-25 23:28:00;;aleno;;
+tech:t:f;FTTN;Fiber To The Neighbourhood;Fibre jusqu au quartier;2018-06-25 23:28:00;;aleno;;
+tech:t:f;FTTO;Fiber To The Office;Fibre jusqu au bureau - entreperises;2018-06-25 23:28:00;;aleno;;
+tech:t:f;FTTS;Fiber To The Street;Fibre jusqu a la rue - bâtiment;2018-06-25 23:28:00;;aleno;;
