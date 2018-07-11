@@ -8,6 +8,7 @@ v0.04.0-beta
 - chg: t_dt_organisme : Conseil général changé en Conseil départemental. 
 - chg: t_dt_tgkey : modification de nomenclature des clés. 
 - chg: t_dt_tag : modification de nomenclature des clés. 
+- chg: GraceTHD-Data_-_Manuel_administrateur.pdf
 
 v0.03.0-beta
 SQL : 
