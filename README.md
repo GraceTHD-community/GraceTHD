@@ -6,9 +6,10 @@ Ce projet est un package des projets GraceTHD suivant :
 * GraceTHD-MCD
 * GraceTHD-MOD
 * GraceTHD-Check
+* GraceTHD-Data
+* GraceTHD-Manage
 * GraceTHD-Layers
 * GraceTHD-Demo
-* GraceTHD-Data
 
 Site web : [http://gracethd.org](http://gracethd.org)
 
