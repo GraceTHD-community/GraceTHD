@@ -239,6 +239,18 @@ INSERT INTO l_fo_color VALUES ('1.9', 'MARRON (BR)', '#993300 -  FOTAG IEEE 802.
 INSERT INTO l_fo_color VALUES ('1.10', 'NOIR (N)', '#000000 -  FOTAG IEEE 802.8');
 INSERT INTO l_fo_color VALUES ('1.11', 'TURQUOISE (TU)', '#00B0F0 -  FOTAG IEEE 802.8');
 INSERT INTO l_fo_color VALUES ('1.12', 'ROSE (RS)', '#FF65CC -  FOTAG IEEE 802.8');
+INSERT INTO l_fo_color VALUES ('2.1', 'BLEU (BL)', '#0070C0 - TIA-598-C');
+INSERT INTO l_fo_color VALUES ('2.2', 'ORANGE (OR)', '#FFC000 - TIA-598-C');
+INSERT INTO l_fo_color VALUES ('2.3', 'VERT (VE)', '#92D050 - TIA-598-C');
+INSERT INTO l_fo_color VALUES ('2.4', 'MARRON (BR)', '#993300 - TIA-598-C');
+INSERT INTO l_fo_color VALUES ('2.5', 'GRIS (GR)', '#C1C1C1 - TIA-598-C');
+INSERT INTO l_fo_color VALUES ('2.6', 'BLANC (B)', '#FFFFFF - TIA-598-C');
+INSERT INTO l_fo_color VALUES ('2.7', 'ROUGE (R)', '#FF0000 - TIA-598-C');
+INSERT INTO l_fo_color VALUES ('2.8', 'NOIR (N)', '#000000 - TIA-598-C');
+INSERT INTO l_fo_color VALUES ('2.9', 'JAUNE (J)', '#FFFF00 - TIA-598-C');
+INSERT INTO l_fo_color VALUES ('2.10', 'VIOLET (V)', '#7638A3 - TIA-598-C');
+INSERT INTO l_fo_color VALUES ('2.11', 'ROSE (RS)', '#FF65CC - TIA-598-C');
+INSERT INTO l_fo_color VALUES ('2.12', 'TURQUOISE (TU)', '#00B0F0 - TIA-598-C');
 INSERT INTO l_fo_type VALUES ('G651', 'G651', 'Norme ITU : Fibre multimode a gradient d indice type 50/125μm');
 INSERT INTO l_fo_type VALUES ('G652', 'G652', 'Norme ITU : Fibre monomode standard SMF pour utilisation a 1300 nm et eventuellement a 1550 nm ');
 INSERT INTO l_fo_type VALUES ('G652A', 'G652A', 'Norme ITU : Version de base de la fibre G652, definie a 1310 nm et a 1550 nm');
